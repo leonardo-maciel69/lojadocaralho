@@ -2,10 +2,12 @@ package model;
 
 public class login {
 
+    private long id;
     private String  usuario;
-    private int senha;
-    private int cpf;
+    private String senha;
+    private String cpf;
 
+    public long getId() {return id;}
     public String getUsuario() {
         return usuario;
     }
@@ -14,19 +16,19 @@ public class login {
         this.usuario = usuario;
     }
 
-    public int getSenha() {
+    public String getSenha() {
         return senha;
     }
 
-    public void setSenha(int senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 }

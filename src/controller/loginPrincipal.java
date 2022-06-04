@@ -28,7 +28,7 @@ public class loginPrincipal implements Ilogin {
     public void inserirLogin(login L) throws ClassNotFoundException, SQLException {
         loginDB lDB = new loginDB();
         lDB.inserirLogin(L);
-        lDB.limparCampoLogin(L);
+        lDB.excluirLogin(L);
         lDB.buscarLogin(L);
     }
 
@@ -36,7 +36,7 @@ public class loginPrincipal implements Ilogin {
     public void atualizarLogin(login L) throws ClassNotFoundException, SQLException {
         loginDB lDB = new loginDB();
         lDB.atualizarLogin(L);
-        lDB.limparCampoLogin(L);
+        lDB.excluirLogin(L);
         lDB.buscarLogin(L);
 
     }
@@ -45,7 +45,7 @@ public class loginPrincipal implements Ilogin {
     public void excluirLogin(login L) throws ClassNotFoundException, SQLException {
         loginDB lDB = new loginDB();
         lDB.excluirLogin(L);
-        lDB.limparCampoLogin(L);
+        lDB.excluirLogin(L);
         lDB.buscarLogin(L);
 
     }
@@ -54,6 +54,7 @@ public class loginPrincipal implements Ilogin {
         loginDB lDB = new loginDB();
         lDB.buscarLogin(L);
         tfUsuarioCadastro.setText(L.getUsuario());
-        tfCpf.setText
+        tfCpf.setText(L.getCpf());
     }
+
 }
