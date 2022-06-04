@@ -2,7 +2,7 @@ package model;
 
 public class pagamento {
 
-    private String endeate_endereco;
+    private String endereco;
     private int codFormapagamento;
     private String descricaoProduto;
     private float totalFrete;
