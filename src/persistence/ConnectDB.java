@@ -10,7 +10,7 @@ public class ConnectDB {
     public Connection getConnection() throws ClassNotFoundException, SQLException {
 
         String user = "root";
-        String senha = "P4ssw0rd";
+        String senha = "123456";
         String myDriver = "com.mysql.cj.jdbc.Driver";
         String myUrl = "jdbc:mysql://localhost:3306/LOJA_ESPORTES";
         Class.forName(myDriver);
