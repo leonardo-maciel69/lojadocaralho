@@ -12,9 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class loginDB implements Ilogin {
-
     private Connection c;
-
     public loginDB() throws ClassNotFoundException, SQLException{
         ConnectDB cDB = new ConnectDB();
         c = cDB.getConnection();
@@ -34,11 +32,9 @@ public class loginDB implements Ilogin {
         List<login> logins = new ArrayList<>();
         PreparedStatement ps = c.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
-        int count = 0;
         try {
-                ps.setString(1, l.getUsuario());
-                ps.setString(2, l.getCpf());
-                count++;
+            ps.setString(1, l.getUsuario());
+            ps.setString(2, l.getCpf());
         } catch (NullPointerException nexc){
             JOptionPane.showMessageDialog(null, "Não há pagamentos cadastrados.\n");
         }

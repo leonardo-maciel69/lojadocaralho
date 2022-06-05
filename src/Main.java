@@ -1,29 +1,16 @@
 import model.login;
-import persistence.ConnectDB;
-import controller.loginPrincipal;
 import persistence.loginDB;
-
-
 import java.sql.SQLException;
-
-
-
-
 public class Main {
 
-    public static void main(String[] args) {
-        try{
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
             loginDB Login = new loginDB();
             login loginm = new login();
+            loginm.setSenha("310802Gi");
             loginm.setUsuario("leonardo.destro");
-            Login.inserirLogin(loginm);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
+            Login.atualizarLogin(loginm);
     }
+
 }
+
 

@@ -12,7 +12,7 @@ public class ConnectDB {
         String user = "root";
         String senha = "123456";
         String myDriver = "com.mysql.cj.jdbc.Driver";
-        String myUrl = "jdbc:mysql://localhost:3306/LOJA_ESPORTES";
+        String myUrl = "jdbc:mysql://localhost:3306/loja_esportes";
         Class.forName(myDriver);
 
         c = DriverManager.getConnection(myUrl, user, senha);
