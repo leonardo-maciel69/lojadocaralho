@@ -2,6 +2,7 @@ package persistence;
 
 import model.produtos;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,22 +28,19 @@ public class produtosDB {
     }
 
     public void buscarProdutos(produtos p) throws SQLException {
-        String sql = "Select codigo, login, cpf from cliente";
+        String sql = "Select codigo, descricao, preço from cliente";
         List<produtos> produtos1 = new ArrayList<>();
         PreparedStatement ps = c.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
-        int count = 0;
-        if (rs.next()) {
+        //colocar while caso traga a tabela sem diferenciar os registros no try catch
+        try {
             ps.setLong(1, p.getIditem());
             ps.setString(2, p.getDescricao());
-            ps.setInt(3, p.getPreço());
-            count++;
+            ps.setDouble(3, p.getPreço());
+        } catch (NullPointerException nexc){
+            JOptionPane.showMessageDialog(null, "Não há pagamentos cadastrados.\n");
         }
-        if (count==0) {
-            p = new produtos();
-            produtos p1 = new produtos();
-            p.setDescricao(String.valueOf(p1));
-        }
+        ps.close();
         ps.close();
     }
 
@@ -55,10 +53,11 @@ public class produtosDB {
     }
 
     public void atualziarProdutos(produtos p) throws SQLException {
-        String sql = "UPDATE produtos SET preço = ? where codigo = ?";
+        String sql = "UPDATE produtos SET preço = ?, descricao = ? where codigo = ?";
         PreparedStatement ps = c.prepareStatement(sql);
         ps.setString(1, p.getDescricao());
-        ps.setLong(2, p.getIditem());
+        ps.setString(2,p.getDescricao());
+        ps.setLong(3, p.getIditem());
         ps.execute();
         ps.close();
     }

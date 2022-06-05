@@ -3,6 +3,7 @@ package persistence;
 import controller.Ilogin;
 import model.login;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,14 +35,12 @@ public class loginDB implements Ilogin {
         PreparedStatement ps = c.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         int count = 0;
-        if (rs.next()) {
-            ps.setLong(1, l.getId());
-            count++;
-        }
-        if (count==0) {
-            l = new login();
-            login l1 = new login();
-            l.setUsuario(String.valueOf(l1));
+        try {
+                ps.setString(1, l.getUsuario());
+                ps.setString(2, l.getCpf());
+                count++;
+        } catch (NullPointerException nexc){
+            JOptionPane.showMessageDialog(null, "Não há pagamentos cadastrados.\n");
         }
         ps.close();
     }

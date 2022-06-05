@@ -2,40 +2,34 @@ package model;
 
 public class carrinho {
 
-    private int codItem;
-    private float valorItem;
-    private int quantidadeItem;
-    private float totalCarrinho;
+    private double totalItens;
+    private int idCarrinho;
 
-    public int getCodItem() {
-        return codItem;
+    private int idLinha;
+    private double totalGeral;
+    private int qtdItens;
+
+    public double getTotalItens() {return totalItens;}
+
+    public void setTotalItens(double totalItens) {this.totalItens = totalItens;}
+
+    public int getIdCarrinho() {return idCarrinho;}
+
+    public void setIdCarrinho(int idCarrinho) {this.idCarrinho = idCarrinho;}
+
+    public double getTotalGeral() {
+        return totalGeral;
     }
 
-    public void setCodItem(int codItem) {
-        this.codItem = codItem;
+    public void setTotalGeral(double totalGeral) {
+        this.totalGeral = totalGeral;
     }
 
-    public float getValorItem() {
-        return valorItem;
-    }
+    public int getQtdItens() {return qtdItens;}
 
-    public void setValorItem(float valorItem) {
-        this.valorItem = valorItem;
-    }
+    public void setQtdItens(int qtdItens) {this.qtdItens = qtdItens;}
 
-    public int getQuantidadeItem() {
-        return quantidadeItem;
-    }
+    public int getIdLinha() {return idLinha;}
 
-    public void setQuantidadeItem(int quantidadeItem) {
-        this.quantidadeItem = quantidadeItem;
-    }
-
-    public float getTotalCarrinho() {
-        return totalCarrinho;
-    }
-
-    public void setTotalCarrinho(float totalCarrinho) {
-        this.totalCarrinho = totalCarrinho;
-    }
+    public void setIdLinha(int idLinha) {this.idLinha = idLinha;}
 }

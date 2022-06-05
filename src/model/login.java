@@ -3,7 +3,7 @@ package model;
 public class login {
 
     private long id;
-    private String  usuario;
+    private String usuario;
     private String senha;
     private String cpf;
 
