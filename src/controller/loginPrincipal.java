@@ -55,6 +55,7 @@ public class loginPrincipal implements Ilogin {
         loginDB lDB = new loginDB();
         lDB.buscarLogin(L);
         tfUsuarioCadastro.setText(L.getUsuario());
-        tfCpf.setText(L.getCpf());
+        tfCpf.setText(String.valueOf(L.getCpf());
+        tfSenhaCadastro
     }
 }
