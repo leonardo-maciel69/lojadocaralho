@@ -29,15 +29,8 @@ public class loginDB implements Ilogin {
     }
 
     public void buscarLogin(login l) throws SQLException {
-        String sql = "Select login, cpf where from cliente";
+        String sql = "Select login, cpf from cliente";
         List<login> logins = new ArrayList<>();
-        PreparedStatement ps = c.prepareStatement(sql);
-        ps.execute();
-        ps.close();
-    }
-
-    public void excluirLogin(login l) throws SQLException {
-        String sql = "DELETE FROM cliente where codcli = ?";
         PreparedStatement ps = c.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         int count = 0;
@@ -50,6 +43,13 @@ public class loginDB implements Ilogin {
             login l1 = new login();
             l.setUsuario(String.valueOf(l1));
         }
+        ps.close();
+    }
+
+    public void excluirLogin(login l) throws SQLException {
+        String sql = "DELETE FROM cliente where codcli = ?";
+        PreparedStatement ps = c.prepareStatement(sql);
+        ps.execute();
         ps.close();
     }
 

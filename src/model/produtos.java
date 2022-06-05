@@ -2,31 +2,29 @@ package model;
 
 public class produtos {
 
-    private int codigoProduto;
-    private int quantidadeProdutos;
-    private float valor;
+    private long iditem;
 
-    public int getCodigoProduto() {
-        return codigoProduto;
+    private int preço;
+
+    private String descricao;
+
+    public long getIditem() {return iditem;}
+
+    public void setIditem(long iditem) {this.iditem = iditem;}
+
+    public int getPreço() {
+        return preço;
     }
 
-    public void setCodigoProduto(int codigoProduto) {
-        this.codigoProduto = codigoProduto;
+    public void setPreço(int quantidadeProdutos) {
+        this.preço = preço;
     }
 
-    public int getQuantidadeProdutos() {
-        return quantidadeProdutos;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setQuantidadeProdutos(int quantidadeProdutos) {
-        this.quantidadeProdutos = quantidadeProdutos;
-    }
-
-    public float getValor() {
-        return valor;
-    }
-
-    public void setValor(float valor) {
-        this.valor = valor;
+    public void setDescricao(String valor) {
+        this.descricao = descricao;
     }
 }
