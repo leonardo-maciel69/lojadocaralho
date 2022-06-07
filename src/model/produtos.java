@@ -27,4 +27,13 @@ public class produtos {
     public void setDescricao(String valor) {
         this.descricao = descricao;
     }
+
+    @Override
+    public String toString() {
+        return "produtos{" +
+                "iditem=" + iditem +
+                ", preço=" + preço +
+                ", descricao='" + descricao + '\'' +
+                '}';
+    }
 }

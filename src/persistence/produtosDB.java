@@ -32,13 +32,13 @@ public class produtosDB {
         List<produtos> produtos1 = new ArrayList<>();
         PreparedStatement ps = c.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
-        //colocar while caso traga a tabela sem diferenciar os registros no try catch
+        //colocar while caso traga a tabela sem diferenciar os registros no try
         try {
             ps.setLong(1, p.getIditem());
             ps.setString(2, p.getDescricao());
             ps.setDouble(3, p.getPreço());
         } catch (NullPointerException nexc){
-            JOptionPane.showMessageDialog(null, "Não há pagamentos cadastrados.\n");
+            JOptionPane.showMessageDialog(null, "Não há produtos cadastrados.\n");
         }
         ps.close();
         ps.close();

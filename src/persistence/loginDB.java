@@ -36,7 +36,7 @@ public class loginDB implements Ilogin {
             ps.setString(1, l.getUsuario());
             ps.setString(2, l.getCpf());
         } catch (NullPointerException nexc){
-            JOptionPane.showMessageDialog(null, "Não há pagamentos cadastrados.\n");
+            JOptionPane.showMessageDialog(null, "Não há logins cadastrados.\n");
         }
         ps.close();
     }

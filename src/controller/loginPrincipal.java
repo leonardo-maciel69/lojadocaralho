@@ -39,16 +39,13 @@ public class loginPrincipal implements Ilogin {
         lDB.atualizarLogin(L);
         lDB.excluirLogin(L);
         lDB.buscarLogin(L);
-
     }
 
     @Override
     public void excluirLogin(login L) throws ClassNotFoundException, SQLException {
         loginDB lDB = new loginDB();
         lDB.excluirLogin(L);
-        lDB.excluirLogin(L);
         lDB.buscarLogin(L);
-
     }
 
     public void buscarLogin(login L) throws ClassNotFoundException, SQLException {

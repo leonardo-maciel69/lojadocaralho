@@ -32,4 +32,15 @@ public class carrinho {
     public int getIdLinha() {return idLinha;}
 
     public void setIdLinha(int idLinha) {this.idLinha = idLinha;}
+
+    @Override
+    public String toString() {
+        return "carrinho{" +
+                "totalItens=" + totalItens +
+                ", idCarrinho=" + idCarrinho +
+                ", idLinha=" + idLinha +
+                ", totalGeral=" + totalGeral +
+                ", qtdItens=" + qtdItens +
+                '}';
+    }
 }

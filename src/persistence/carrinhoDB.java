@@ -43,7 +43,7 @@ public class carrinhoDB {
     }
     public void buscarCarrinhoIt(carrinho car, produtos p) throws SQLException {
         String sql = "Select id_linha, id_car, qtd_it, codigo, preço from carrinhoit";
-        List<carrinho> carrinho1 = new ArrayList<>();
+        List<carrinho> carrinhos = new ArrayList<>();
         PreparedStatement ps = c.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         int count = 0;
@@ -55,7 +55,7 @@ public class carrinhoDB {
             ps.setLong(3, p.getIditem());
             ps.setDouble(5, p.getPreço());
         } catch (NullPointerException nexc){
-            JOptionPane.showMessageDialog(null, "Não há pagamentos cadastrados.\n");
+            JOptionPane.showMessageDialog(null, "Não há itens no carrinho.\n");
         }
         ps.close();
     }

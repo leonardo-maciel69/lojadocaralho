@@ -31,4 +31,14 @@ public class login {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    @Override
+    public String toString() {
+        return "login{" +
+                "id=" + id +
+                ", usuario='" + usuario + '\'' +
+                ", senha='" + senha + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
+    }
 }

@@ -28,7 +28,7 @@ public class pagamentoDB {
         ps.close();
     }
 
-    public void buscarformpagamento(pagamento p) throws SQLException {
+    public void buscarPagamento(pagamento p) throws SQLException {
         String sql = "SELECT id_pg, formapagamento, endereço, totalfrete FROM pagamento";
         List<pagamento> pagamentos = new ArrayList<>();
         PreparedStatement ps = c.prepareStatement(sql);

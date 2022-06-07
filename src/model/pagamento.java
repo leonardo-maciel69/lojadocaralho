@@ -30,4 +30,14 @@ public class pagamento {
     public void setTotalFrete(float totalFrete) {
         this.totalFrete = totalFrete;
     }
+
+    @Override
+    public String toString() {
+        return "pagamento{" +
+                "id_pg=" + id_pg +
+                ", endereco='" + endereco + '\'' +
+                ", formapagamento='" + formapagamento + '\'' +
+                ", totalFrete=" + totalFrete +
+                '}';
+    }
 }
