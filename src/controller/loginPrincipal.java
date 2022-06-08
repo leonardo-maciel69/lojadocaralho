@@ -16,7 +16,6 @@ public class loginPrincipal implements Ilogin {
     private Label lbCadastrase;
     private Label lbLogin;
 
-
     public loginPrincipal(TextField tfNomeCadastro, TextField tfEmailCadastro, TextField tfSenhaCadastro, Label lbCadastrase, Label lbLogin) {
         this.tfUsuarioCadastro = tfUsuarioCadastro;
         this.tfSenhaCadastro = tfSenhaCadastro;

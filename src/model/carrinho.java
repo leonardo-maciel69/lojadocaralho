@@ -4,7 +4,6 @@ public class carrinho {
 
     private double totalItens;
     private int idCarrinho;
-
     private int idLinha;
     private double totalGeral;
     private int qtdItens;
