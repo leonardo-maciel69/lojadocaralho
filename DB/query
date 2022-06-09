@@ -1,0 +1,18 @@
+CREATE DATABASE LOJA_ESPORTES;
+
+USE LOJA_ESPORTES;
+
+CREATE TABLE ITENS (
+    codigo int not null,
+    descricao varchar(100) not null,
+    preço int not null,
+    primary key (codigo)
+);
+
+CREATE TABLE CLIENTE (
+    codcli int not null,
+    senha varchar(8) not null,
+    cpf var(11) not null,
+    login varchar(100) not null,
+    primary key (codcli)
+);
