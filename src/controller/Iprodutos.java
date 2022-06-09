@@ -1,11 +1,11 @@
 package controller;
 
-import model.produtos;
+import model.Produtos;
 
 import java.sql.SQLException;
 public interface Iprodutos {
-    void inserirProdutos(produtos pr) throws SQLException,ClassNotFoundException;
-    void buscarProdutos(produtos pr) throws SQLException,ClassNotFoundException;
-    void atualizarProdutos(produtos pr) throws SQLException,ClassNotFoundException;
-    void excluirProdutos(produtos pr) throws SQLException,ClassNotFoundException;
+    void inserirProdutos(Produtos pr) throws SQLException,ClassNotFoundException;
+    void buscarProdutos(Produtos pr) throws SQLException,ClassNotFoundException;
+    void atualizarProdutos(Produtos pr) throws SQLException,ClassNotFoundException;
+    void excluirProdutos(Produtos pr) throws SQLException,ClassNotFoundException;
 }

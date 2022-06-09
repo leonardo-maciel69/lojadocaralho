@@ -1,6 +1,6 @@
 package model;
 
-public class login {
+public class Login {
 
     private long id;
     private String usuario;
@@ -34,7 +34,7 @@ public class login {
 
     @Override
     public String toString() {
-        return "login{" +
+        return "Login{" +
                 "id=" + id +
                 ", usuario='" + usuario + '\'' +
                 ", senha='" + senha + '\'' +

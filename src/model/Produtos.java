@@ -1,6 +1,6 @@
 package model;
 
-public class produtos {
+public class Produtos {
 
     private long iditem;
 
@@ -30,7 +30,7 @@ public class produtos {
 
     @Override
     public String toString() {
-        return "produtos{" +
+        return "Produtos{" +
                 "iditem=" + iditem +
                 ", preço=" + preço +
                 ", descricao='" + descricao + '\'' +

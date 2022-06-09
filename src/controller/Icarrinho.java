@@ -1,14 +1,14 @@
 package controller;
 
-import model.login;
-import model.pagamento;
+import model.Login;
+import model.Pagamento;
 
 import java.sql.SQLException;
 
 public interface Icarrinho {
-    void inserirCarrinho(login L, pagamento PG) throws SQLException;
-    void inserirCarrinhoIt(login L, pagamento PG) throws SQLException;
-    void buscarCarrinhoIt(login L, pagamento PG) throws SQLException;
-    void excluirCarrinhoIt(login L, pagamento PG) throws SQLException;
-    void atualizarCarrinhoIt(login L, pagamento PG) throws SQLException;
+    void inserirCarrinho(Login L, Pagamento PG) throws SQLException;
+    void inserirCarrinhoIt(Login L, Pagamento PG) throws SQLException;
+    void buscarCarrinhoIt(Login L, Pagamento PG) throws SQLException;
+    void excluirCarrinhoIt(Login L, Pagamento PG) throws SQLException;
+    void atualizarCarrinhoIt(Login L, Pagamento PG) throws SQLException;
 }

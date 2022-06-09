@@ -1,6 +1,6 @@
 package model;
 
-public class pagamento {
+public class Pagamento {
 
     private long id_pg;
     private String endereco;
@@ -33,7 +33,7 @@ public class pagamento {
 
     @Override
     public String toString() {
-        return "pagamento{" +
+        return "Pagamento{" +
                 "id_pg=" + id_pg +
                 ", endereco='" + endereco + '\'' +
                 ", formapagamento='" + formapagamento + '\'' +

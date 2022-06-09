@@ -1,9 +1,9 @@
 package persistence;
 
-import model.carrinho;
-import model.pagamento;
-import model.produtos;
-import model.login;
+import model.Carrinho;
+import model.Login;
+import model.Pagamento;
+import model.Produtos;
 
 import javax.swing.*;
 import java.sql.Connection;
@@ -13,16 +13,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class carrinhoDB {
+public class CarrinhoDB {
 
     private Connection c;
 
-    public carrinhoDB() throws ClassNotFoundException, SQLException {
+    public CarrinhoDB() throws ClassNotFoundException, SQLException {
         ConnectDB cDB = new ConnectDB();
         c = cDB.getConnection();
     }
-    public void inserirCarrinho(login l, pagamento pg) throws SQLException {
-        String sql = "INSERT INTO carrinho (total_it, total_geral, login, totalfrete) values (?,?,?)";
+    public void inserirCarrinho(Login l, Pagamento pg) throws SQLException {
+        String sql = "INSERT INTO Carrinho (total_it, total_geral, Login, totalfrete) values (?,?,?)";
         PreparedStatement ps = c.prepareStatement(sql);
         ps.setDouble(1, 0);
         ps.setDouble(2, 0);
@@ -31,7 +31,7 @@ public class carrinhoDB {
         ps.execute();
         ps.close();
     }
-    public void inserirCarrinhoIt(carrinho car, produtos p, login l) throws SQLException {
+    public void inserirCarrinhoIt(Carrinho car, Produtos p, Login l) throws SQLException {
         String sql = "INSERT INTO carrinhoit (codigo, qtd_it, preço, id_car) values (?,?,?,?) ";
         PreparedStatement ps = c.prepareStatement(sql);
         ps.setLong(1, p.getIditem());
@@ -41,9 +41,9 @@ public class carrinhoDB {
         ps.execute();
         ps.close();
     }
-    public void buscarCarrinhoIt(carrinho car, produtos p) throws SQLException {
+    public void buscarCarrinhoIt(Carrinho car, Produtos p) throws SQLException {
         String sql = "Select id_linha, id_car, qtd_it, codigo, preço from carrinhoit";
-        List<carrinho> carrinhos = new ArrayList<>();
+        List<Carrinho> Carrinhos = new ArrayList<>();
         PreparedStatement ps = c.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         int count = 0;
@@ -55,18 +55,18 @@ public class carrinhoDB {
             ps.setLong(3, p.getIditem());
             ps.setDouble(5, p.getPreço());
         } catch (NullPointerException nexc){
-            JOptionPane.showMessageDialog(null, "Não há itens no carrinho.\n");
+            JOptionPane.showMessageDialog(null, "Não há itens no Carrinho.\n");
         }
         ps.close();
     }
-    public void excluirCarrinhoIt(carrinho car) throws SQLException {
+    public void excluirCarrinhoIt(Carrinho car) throws SQLException {
         String sql = "DELETE FROM carrinhoit where id_linha = ?";
         PreparedStatement ps = c.prepareStatement(sql);
         ps.setLong(1, car.getIdLinha());
         ps.execute();
         ps.close();
     }
-    public void atualizarCarinhoIt(carrinho car, produtos p) throws SQLException {
+    public void atualizarCarinhoIt(Carrinho car, Produtos p) throws SQLException {
         String sql = "UPDATE carrinhoit SET id_car = ?, codigo = ?, qtd_it = ?, preço = ? where id_pg = ?";
         PreparedStatement ps = c.prepareStatement(sql);
         ps.setDouble(1,car.getIdCarrinho());

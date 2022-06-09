@@ -1,6 +1,6 @@
 package model;
 
-public class carrinho {
+public class Carrinho {
 
     private double totalItens;
     private int idCarrinho;
@@ -34,7 +34,7 @@ public class carrinho {
 
     @Override
     public String toString() {
-        return "carrinho{" +
+        return "Carrinho{" +
                 "totalItens=" + totalItens +
                 ", idCarrinho=" + idCarrinho +
                 ", idLinha=" + idLinha +

@@ -2,14 +2,13 @@ package controller;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import model.login;
-import model.pagamento;
-import persistence.pagamentoDB;
+import model.Pagamento;
+import persistence.PagamentoDB;
 
 import java.sql.SQLException;
-public class pagamentoPrincipal implements Ipagamento {
+public class PagamentoPrincipal implements Ipagamento {
 
-    public String msg_pagamento = "Forma de pagamento";
+    public String msg_pagamento = "Forma de Pagamento";
     public TextField tfid_pg;
 
     public TextField tfendereco;
@@ -18,7 +17,7 @@ public class pagamentoPrincipal implements Ipagamento {
 
     public TextField tftotalFrete;
 
-    public pagamentoPrincipal(TextField tfid_pg, TextField tfendereco, TextField tfformapagamento, TextField tftotalFrete, Label msg_pagamento) {
+    public PagamentoPrincipal(TextField tfid_pg, TextField tfendereco, TextField tfformapagamento, TextField tftotalFrete, Label msg_pagamento) {
         this.tfid_pg = tfid_pg;
         this.tfendereco = tfendereco;
         this.tfformapagamento = tfformapagamento;
@@ -27,8 +26,8 @@ public class pagamentoPrincipal implements Ipagamento {
     }
 
     @Override
-    public void inserirPagamento(pagamento P) throws SQLException, ClassNotFoundException {
-        pagamentoDB PDB = new pagamentoDB();
+    public void inserirPagamento(Pagamento P) throws SQLException, ClassNotFoundException {
+        PagamentoDB PDB = new PagamentoDB();
         PDB.inserirPagamento(P);
         PDB.buscarPagamento(P);
         PDB.atualizarPagamento(P);
@@ -38,16 +37,16 @@ public class pagamentoPrincipal implements Ipagamento {
     }
 
     @Override
-    public void buscarPagamento(pagamento P) throws SQLException, ClassNotFoundException {
-        pagamentoDB PDB = new pagamentoDB();
+    public void buscarPagamento(Pagamento P) throws SQLException, ClassNotFoundException {
+        PagamentoDB PDB = new PagamentoDB();
         PDB.inserirPagamento(P);
         PDB.buscarPagamento(P);
         PDB.atualizarPagamento(P);
     }
 
     @Override
-    public void atualizarPagamento(pagamento P) throws SQLException, ClassNotFoundException {
-        pagamentoDB PDB = new pagamentoDB();
+    public void atualizarPagamento(Pagamento P) throws SQLException, ClassNotFoundException {
+        PagamentoDB PDB = new PagamentoDB();
         PDB.inserirPagamento(P);
         PDB.buscarPagamento(P);
         PDB.atualizarPagamento(P);
@@ -55,8 +54,8 @@ public class pagamentoPrincipal implements Ipagamento {
     }
 
     @Override
-    public void excluirPagamento(pagamento P) throws SQLException, ClassNotFoundException {
-        pagamentoDB PDB = new pagamentoDB();
+    public void excluirPagamento(Pagamento P) throws SQLException, ClassNotFoundException {
+        PagamentoDB PDB = new PagamentoDB();
         PDB.excluirPagamento(P);
         PDB.buscarPagamento(P);
     }

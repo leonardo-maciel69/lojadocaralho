@@ -1,13 +1,13 @@
 package controller;
 
-import model.pagamento;
+import model.Pagamento;
 
 import java.sql.SQLException;
 public interface Ipagamento {
 
-    void inserirPagamento(pagamento p) throws SQLException, ClassNotFoundException;
-    void buscarPagamento(pagamento p) throws SQLException,ClassNotFoundException;
-    void atualizarPagamento(pagamento p) throws SQLException, ClassNotFoundException;
-    void excluirPagamento(pagamento p) throws SQLException, ClassNotFoundException;
+    void inserirPagamento(Pagamento p) throws SQLException, ClassNotFoundException;
+    void buscarPagamento(Pagamento p) throws SQLException,ClassNotFoundException;
+    void atualizarPagamento(Pagamento p) throws SQLException, ClassNotFoundException;
+    void excluirPagamento(Pagamento p) throws SQLException, ClassNotFoundException;
 
     }

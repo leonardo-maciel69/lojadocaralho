@@ -1,16 +1,12 @@
-import model.login;
-import persistence.loginDB;
-import java.sql.SQLException;
+import controller.CarrinhoPrincipal;
+import controller.LoginPrincipal;
+import controller.PagamentoPrincipal;
+import controller.ProdutosPrincipal;
+
 public class Main {
-
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-            loginDB Login = new loginDB();
-            login loginm = new login();
-            loginm.setSenha("310802Gi");
-            loginm.setUsuario("leonardo.destro");
-            Login.atualizarLogin(loginm);
-    }
-
+    private LoginPrincipal logP = new LoginPrincipal();
+    private PagamentoPrincipal pagP = new PagamentoPrincipal();
+    private ProdutosPrincipal prdP = new ProdutosPrincipal();
+    private CarrinhoPrincipal carP = new CarrinhoPrincipal();
 }
-
 
